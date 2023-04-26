@@ -12,7 +12,6 @@
  * @fo: format (c, s, i, d)
  * @print: function to call
  */
-
 typedef struct format
 {
 	char fo;
