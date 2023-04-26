@@ -51,7 +51,7 @@ int _printf_helper(const char *format, va_list *ptr)
 						return (-1);
 					_putchar('%');
 					_putchar(*format);
-					count++;
+					count += 2;
 				}
 				else
 					count += print(ptr);
