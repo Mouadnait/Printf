@@ -1,5 +1,7 @@
 #include "main.h"
 
+int _printf_helper(const char *format, va_list *ptr);
+
 /**
  * _printf - Build out the printf function
  * @format: string passed with possible format specifiers
@@ -8,11 +10,27 @@
  */
 int _printf(const char *format, ...)
 {
-	int (*print)(va_list *);
-	int count = 0;
 	va_list ptr;
 
+	if (!format)
+		return (-1);
 	va_start(ptr, format);
+
+	return (_printf_helper(format, &ptr));
+}
+
+/**
+ * _printf_helper - prints formatted output to stdout
+ * @format: A string containing zero or more format specifiers
+ * @ptr: A pointer to a va_list of arguments to be printed
+ *
+ * Return: The number of characters printed on success, -1 on failure
+ */
+int _printf_helper(const char *format, va_list *ptr)
+{
+	int (*print)(va_list *);
+	int count = 0;
+
 	while (*format)
 	{
 		if (*format == '%')
@@ -36,7 +54,7 @@ int _printf(const char *format, ...)
 					count++;
 				}
 				else
-					count += print(&ptr);
+					count += print(ptr);
 			}
 		}
 		else
@@ -46,6 +64,6 @@ int _printf(const char *format, ...)
 		}
 		format++;
 	}
-	va_end(ptr);
+	va_end(*ptr);
 	return (count);
 }
