@@ -23,13 +23,11 @@ An implementation of the printf function in C!
 
 ## File Descriptions
 
-- `main.h`: Header file which contains `<stdarg.h>` and also libraries used, constant `BUFSIZE`, struct `validTypes` definition, and all function prototypes.
+- `main.h`: Header file which contains `<stdarg.h>` `<stdio.h>` `<string.h>` `<stdlib.h>` `<unistd.h>`, struct `format` definition, and all function prototypes.
 - `_printf.c`: Main printf function
-- `helper.c`: Core helper functions for printf, including function `get_valid_type` which returns a function pointer, and `alloc_buffer` which fills buffer space and handles a full buffer fill.
-- `tools.c`: Helper functions for general use, including `_strlen` to find string length, `_memcpy` that copies characters into a destination, and `_puts` that calls the `write` function to print an entire buffer.
-- `printf_functions.c`: Functions stored within our struct `validTypes` array, which handles char, string, %, int, and unsigned int.
-- `adv_printf_functions.c`: Functions stored within our struct `validTypes` array, which handles reverse, and rot13.
-- `adv2_printf_functions.c`: Functions stored within our struct `validTypes` array, which handles octal, and hex.
+- `tools.c`: Helper functions for general use, including `str_len` to find string length, and `_putchar` that calls the `write` function to print an entire buffer.
+- `checks_formats`: A functions to Check if there is a format specifier or not. 
+- `formats_functions.c`: Functions stored within our struct `format` array, which handles char, string, %, int, and unsigned int.
 
 
 ## Team
