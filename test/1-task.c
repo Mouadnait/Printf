@@ -1,4 +1,4 @@
-#include "main.h"
+#include "../main.h"
 #include <limits.h>
 
 /**
@@ -27,6 +27,25 @@ int main(void)
 
     _printf("%d\n", 0);
     printf("%d\n", 0);
+
+    _printf("-----------------------------------\n");
+    printf("%  %\n");
+    _printf("%  %\n");
+
+    _printf("-----------------------------------\n");
+    n1 = printf("%  ");
+    n2 = _printf("%  ");
+    printf("%d        %d\n", n1, n2);
+
+    _printf("-----------------------------------\n");
+    n1 = printf("%  r\n");
+    n2 = _printf("%  r\n");
+    printf("%d  %d\n", n1, n2);
+
+    _printf("-----------------------------------\n");
+    n1 = printf("%c%d%s%i%  %%rhello world\n", 'a', 426, "Mohamed", 14);
+    n2 = _printf("%c%d%s%i%  %%rhello world\n", 'a', 426, "Mohamed", 14);
+    printf("%d %d\n", n1, n2);
 
     _printf("%d\n", INT_MAX);
     printf("%d\n", INT_MAX);
@@ -90,8 +109,8 @@ int main(void)
     printf("%d %d\n", n1, n2);
 
     _printf("-----------------------------------\n");
-    n1 = printf("%c%d%s%i%   %%rhello world\n", 'a', 'b', 426, "Mohamed", 14);
-    n2 = _printf("%c%d%s%i%   %%rhello world\n", 'a', 'b', 426, "Mohamed", 14);
+    n1 = printf("%c%d%s%i%   %%rhello world\n", 'a', 426, "Mohamed", 14);
+    n2 = _printf("%c%d%s%i%   %%rhello world\n", 'a', 426, "Mohamed", 14);
     printf("%d %d\n", n1, n2);
 
     return (0);
