@@ -10,11 +10,9 @@ int _printf(const char *format, ...)
 {
 	int (*print)(va_list *);
 	int count = 0;
-
 	va_list ptr;
 
 	va_start(ptr, format);
-
 	while (*format)
 	{
 		if (*format == '%')
@@ -29,7 +27,10 @@ int _printf(const char *format, ...)
 			else
 			{
 				print = conversion(*format);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 60477d50f1295d580823ebd966c1a85df791f5c0
 				if (print == NULL)
 				{
 					if (!*format)
@@ -50,6 +51,5 @@ int _printf(const char *format, ...)
 		format++;
 	}
 	va_end(ptr);
-
 	return (count);
 }
