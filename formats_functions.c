@@ -44,7 +44,7 @@ int get_string(va_list *string)
  */
 int get_int(va_list *arg)
 {
-	int digits, temp, count, arg_int;
+	long int digits, temp, count, arg_int;
 	char arr[32];
 
 	arg_int = va_arg(*arg, int);
@@ -52,7 +52,7 @@ int get_int(va_list *arg)
 	if (arg_int < 0)
 	{
 		_putchar('-');
-		arg_int = -arg_int;
+		arg_int *= -1;
 		count++;
 	}
 	temp = arg_int;
