@@ -27,10 +27,6 @@ int _printf(const char *format, ...)
 			else
 			{
 				print = conversion(*format);
-<<<<<<< HEAD
-
-=======
->>>>>>> 60477d50f1295d580823ebd966c1a85df791f5c0
 				if (print == NULL)
 				{
 					if (!*format)
