@@ -14,7 +14,12 @@ int (*conversion(char c))(va_list *)
 		{'c', get_char},
 		{'s', get_string},
 		{'d', get_int},
-		{'i', get_int}};
+		{'i', get_int},
+		{'b', get_binary},
+		{'x', get_hex_lower},
+		{'X', get_hex_upper},
+		{'o', get_octal},
+		{'u', get_unsigned}};
 	int i;
 
 	for (i = 0; i < 4; i++)
