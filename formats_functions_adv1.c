@@ -38,7 +38,7 @@ int get_binary(va_list *num)
  */
 int get_hex_lower(va_list *num)
 {
-	int i, count, decimal, rem;
+	int i, j, count, decimal, rem;
 	char hex[32];
 
 	decimal = va_arg(*num, int);
@@ -58,7 +58,7 @@ int get_hex_lower(va_list *num)
 		i++;
 	}
 
-	for (int j = i - 1; j >= 0; j--)
+	for (j = i - 1; j >= 0; j--)
 	{
 		_putchar(hex[j]);
 		count++;
@@ -75,7 +75,7 @@ int get_hex_lower(va_list *num)
  */
 int get_hex_upper(va_list *num)
 {
-	int i, count, decimal, rem;
+	int i, j, count, decimal, rem;
 	char hex[32];
 
 	decimal = va_arg(*num, int);
@@ -96,7 +96,7 @@ int get_hex_upper(va_list *num)
 			i++;
 	}
 
-	for (int j = i - 1; j >= 0; j--)
+	for (j = i - 1; j >= 0; j--)
 	{
 		_putchar(hex[j]);
 		count++;
