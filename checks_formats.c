@@ -19,10 +19,12 @@ int (*conversion(char c))(va_list *)
 		{'x', get_hex_lower},
 		{'X', get_hex_upper},
 		{'o', get_octal},
-		{'u', get_unsigned}};
+		{'u', get_unsigned},
+		{'r', get_reverse},
+		{'R', get_rot}};
 	int i;
 
-	for (i = 0; i < 4; i++)
+	for (i = 0; i < 11; i++)
 	{
 		if (formats[i].fo == c)
 			return ((formats[i].print));
