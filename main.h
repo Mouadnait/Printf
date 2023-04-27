@@ -23,9 +23,13 @@ int (*conversion(char c))(va_list *);
 int get_char(va_list *character);
 int get_string(va_list *string);
 int get_int(va_list *arg);
+int get_binary(va_list *num);
+int get_hex_lower(va_list *num);
+int get_hex_upper(va_list *num);
+int get_octal(va_list *num);
+int get_unsigned(va_list *num);
 
 int _putchar(char c);
 int str_len(char *str);
-char *_memcpy(char *dest, char *src, unsigned int n);
 
 #endif /* MAIN_H */
