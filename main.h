@@ -28,6 +28,7 @@ int get_hex_lower(va_list *num);
 int get_hex_upper(va_list *num);
 int get_octal(va_list *num);
 int get_unsigned(va_list *num);
+int get_pointer(va_list *num);
 int get_reverse(va_list *reverse);
 int get_rot(va_list *rot);
 
