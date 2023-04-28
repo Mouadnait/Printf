@@ -13,6 +13,12 @@ int get_binary(va_list *num)
 	unsigned int conv_num;
 
 	conv_num = va_arg(*num, unsigned int);
+	if (conv_num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+
 	i = count = 0;
 	while (conv_num > 0)
 	{
@@ -43,6 +49,12 @@ int get_hex_lower(va_list *num)
 	char hex[32];
 
 	decimal = va_arg(*num, unsigned int);
+	if (conv_num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+
 	i = count = 0;
 	while (decimal > 0)
 	{
@@ -81,6 +93,12 @@ int get_hex_upper(va_list *num)
 	char hex[32];
 
 	decimal = va_arg(*num, unsigned int);
+	if (conv_num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+
 	i = count = 0;
 	while (decimal > 0)
 	{
@@ -120,6 +138,12 @@ int get_octal(va_list *num)
 	unsigned int decimal;
 
 	decimal = va_arg(*num, unsigned int);
+	if (conv_num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+
 	i = count = 0;
 	while (decimal > 0)
 	{
@@ -149,6 +173,11 @@ int get_unsigned(va_list *num)
 	int i, j, count;
 
 	uns_num = va_arg(*num, unsigned int);
+	if (conv_num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 	i = count = 0;
 	while (uns_num > 0)
 	{
