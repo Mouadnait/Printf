@@ -20,6 +20,7 @@ int (*conversion(char c))(va_list *)
 		{'X', get_hex_upper},
 		{'o', get_octal},
 		{'u', get_unsigned},
+		{'p', get_pointer},
 		{'r', get_reverse},
 		{'R', get_rot}};
 	int i;
