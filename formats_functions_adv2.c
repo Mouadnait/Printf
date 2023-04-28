@@ -70,3 +70,49 @@ int get_rot(va_list *rot)
 	}
 	return (count);
 }
+
+/**
+ * get_pointer - Converts an unsigned long integer to hexadecimal and prints it
+ * @num: A pointer to a va_list containing the unsigned long integer to convert
+ *
+ * Return: The number of characters printed
+ */
+int get_pointer(va_list *num)
+{
+	int i, j, count;
+	unsigned long int decimal, rem;
+	char hex[32];
+
+	decimal = va_arg(*num, unsigned long int);
+	i = count = 0;
+	if (decimal == 0)
+	{
+		write(1,"(nil)",5);
+		return (5);
+	}
+	while (decimal > 0)
+	{
+		rem = decimal % 16;
+		if (rem >= 10)
+		{
+			hex[i] = rem + 87;
+		}
+		else
+		{
+			hex[i] = rem + 48;
+		}
+		decimal /= 16;
+		i++;
+	}
+
+	_putchar('0');
+	_putchar('x');
+	count += 2;
+	for (j = i - 1; j >= 0; j--)
+	{
+		_putchar(hex[j]);
+		count++;
+	}
+
+	return (count);
+}
