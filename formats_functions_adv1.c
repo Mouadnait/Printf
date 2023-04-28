@@ -8,7 +8,7 @@
  */
 int get_binary(va_list *num)
 {
-	int binary[32];
+	int binary[120];
 	int i, j, count;
 	unsigned int conv_num;
 
@@ -115,7 +115,7 @@ int get_hex_upper(va_list *num)
  */
 int get_octal(va_list *num)
 {
-	unsigned int octal[32];
+	unsigned int octal[120];
 	int i, j, count;
 	unsigned int decimal;
 
