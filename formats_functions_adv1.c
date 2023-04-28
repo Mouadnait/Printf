@@ -10,7 +10,7 @@ int get_binary(va_list *num)
 {
 	int binary[32];
 	int i, j, count;
-	int conv_num;
+	unsigned int conv_num;
 
 	conv_num = va_arg(*num, unsigned int);
 	i = count = 0;
@@ -38,10 +38,11 @@ int get_binary(va_list *num)
  */
 int get_hex_lower(va_list *num)
 {
-	int i, j, count, decimal, rem;
+	int i, j, count;
+	unsigned int decimal, rem;
 	char hex[32];
 
-	decimal = va_arg(*num, int);
+	decimal = va_arg(*num, unsigned int);
 	i = count = 0;
 	while (decimal > 0)
 	{
