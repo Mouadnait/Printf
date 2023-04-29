@@ -26,7 +26,7 @@ int (*conversion(char c))(va_list *)
 		{'R', get_rot}};
 	int i;
 
-	for (i = 0; i < 11; i++)
+	for (i = 0; i < 13; i++)
 	{
 		if (formats[i].fo == c)
 			return ((formats[i].print));
