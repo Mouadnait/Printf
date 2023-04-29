@@ -116,3 +116,83 @@ int get_pointer(va_list *num)
 
 	return (count);
 }
+
+/**
+ * get_printable_hex_upper - Converts an unsigned integer to uppercase 
+ * hexadecimal and prints it, only if it is a printable character.
+ * @decimal: The unsigned integer to convert
+ *
+ * Return: The number of characters printed
+ */
+int get_printable_hex_upper(unsigned int decimal)
+{
+	int i, j, count;
+	unsigned int rem;
+	char hex[32];
+
+	if (decimal == 0)
+	{
+	_putchar('0');
+	return (1);
+	}
+
+	i = count = 0;
+	while (decimal > 0)
+	{
+	rem = decimal % 16;
+
+	if (rem >= 10)
+	{
+	    hex[i] = rem + 55;
+	}
+	else
+	{
+	    hex[i] = rem + 48;
+	}
+	decimal /= 16;
+	i++;
+	}
+
+	for (j = i - 1; j >= 0; j--)
+	{
+	_putchar(hex[j]);
+	count++;
+	}
+
+	return (count);
+}
+
+/**
+ * get_conv_string - Converts a string to a printable format and prints it
+ * @arg: A pointer to a va_list containing the string to convert
+ *
+ * Return: The number of characters printed
+ */
+int get_conv_string(va_list *arg)
+{
+	char *str;
+	int count, index;
+
+	str = va_arg(*arg, char *);
+	count = index = 0;
+
+	if (str == NULL)
+	return (write(1, "(null)", 6));
+	while (str && str[index])
+	{
+	if (str[index] < 32 || str[index] >= 127)
+	{
+	    _putchar('\\');
+	    _putchar('x');
+	    get_printable_hex_upper(str[index]);
+	    count += 2;
+	}
+	else
+	{
+	    _putchar(str[index]);
+	    count++;
+	}
+	index++;
+	}
+	return (count);
+}
